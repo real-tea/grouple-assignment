@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Container, Grid, Link, SvgIcon, Typography } from '@mui/material';
+import { Box, Container, Grid, Link, SvgIcon, Typography , Switch } from '@mui/material';
 import Search from './components/Search/Search';
 import WeeklyForecast from './components/WeeklyForecast/WeeklyForecast';
 import TodayWeather from './components/TodayWeather/TodayWeather';
@@ -16,6 +16,7 @@ import {
   getTodayForecastWeather,
   getWeekForecastWeather,
 } from './utilities/DataUtils';
+// import { Switch } from "@material-tailwind/react";
 
 function App() {
   const [todayWeather, setTodayWeather] = useState(null);
@@ -72,6 +73,7 @@ function App() {
         minHeight: '500px',
       }}
     >
+    
       <SvgIcon
         component={SplashIcon}
         inheritViewBox
@@ -102,7 +104,11 @@ function App() {
         <Grid item xs={12} md={todayWeather ? 6 : 12}>
           <Grid item xs={12}>
             <TodayWeather data={todayWeather} forecastList={todayForecast} />
+            
+
+
           </Grid>
+          
         </Grid>
         <Grid item xs={12} md={6}>
           <WeeklyForecast data={weekForecast} />
@@ -159,6 +165,7 @@ function App() {
         margin: '0 auto',
         padding: '1rem 0 3rem',
         marginBottom: '1rem',
+        marginTop:'1.2rem',
         borderRadius: {
           xs: 'none',
           sm: '0 0 1rem 1rem',
@@ -170,6 +177,7 @@ function App() {
       }}
     >
       <Grid container columnSpacing={2}>
+      
         <Grid item xs={12}>
           <Box
             display="flex"
